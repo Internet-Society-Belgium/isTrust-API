@@ -20,7 +20,8 @@
     "dev": "node -r dotenv/config .",
     "build": "node utils/prebuild.js && tsc",
     "deploy": "npm run build && node utils/deploy.js",
-    "lint": "eslint ./src --ext .ts"
+    "lint": "eslint --fix ./src",
+    "format": "prettier -w -u ./src"
   },
   "dependencies": {
     "@maxmind/geoip2-node": "^3.2.0",
