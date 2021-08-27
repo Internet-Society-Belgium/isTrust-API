@@ -1,5 +1,6 @@
 import express from 'express'
 import helmet from 'helmet'
+
 import errorMiddleware from './middlewares/error'
 
 import geolocationRoute from './routes/geolocation'

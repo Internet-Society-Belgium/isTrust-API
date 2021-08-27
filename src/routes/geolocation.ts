@@ -1,12 +1,14 @@
-import { Router } from 'express'
-import { Geolocation } from '../types/geolocation'
 import { Reader } from '@maxmind/geoip2-node'
+import { Router } from 'express'
+
+import { Geolocation } from '../types/geolocation'
+
 import updateGeoLite2 from '../utils/updateGeoLite2'
 
 const router = Router()
 
 export default router.get('/', async (req, res) => {
-  console.log(req.ip) // app.set('trust proxy', true) ?
+  console.log(req.ip)
 
   const dbPath = await updateGeoLite2()
 

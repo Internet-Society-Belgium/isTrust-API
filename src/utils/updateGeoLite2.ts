@@ -1,8 +1,8 @@
-import fs from 'fs-extra'
-import tar from 'tar'
-import path from 'path'
-import https from 'https'
 import crypto from 'crypto'
+import fs from 'fs-extra'
+import https from 'https'
+import path from 'path'
+import tar from 'tar'
 
 const filesPath = path.resolve(__dirname, '../bin/GeoLite2-Country')
 const dbPath = path.resolve(filesPath, 'GeoLite2-Country.mmdb')
