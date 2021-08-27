@@ -8,22 +8,22 @@ import updateGeoLite2 from '../utils/updateGeoLite2'
 const router = Router()
 
 export default router.get('/', async (req, res) => {
-  console.log(req.ip)
+    console.log(req.ip)
 
-  const dbPath = await updateGeoLite2()
+    const dbPath = await updateGeoLite2()
 
-  const reader = await Reader.open(dbPath)
-  try {
-    const { country } = reader.country(req.ip)
-    if (!country) return res.status(404)
+    const reader = await Reader.open(dbPath)
+    try {
+        const { country } = reader.country(req.ip)
+        if (!country) return res.status(404)
 
-    const geolocation: Geolocation = {
-      country: {
-        isoCode: country.isoCode,
-      },
+        const geolocation: Geolocation = {
+            country: {
+                isoCode: country.isoCode,
+            },
+        }
+        res.send(geolocation)
+    } catch (e) {
+        return res.status(404).send()
     }
-    res.send(geolocation)
-  } catch (e) {
-    return res.status(404).send()
-  }
 })
