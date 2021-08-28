@@ -23,8 +23,8 @@ export default router.get('/', async (req, res) => {
                 isoCode,
             },
             location: {
-                longitude: response.location?.longitude,
                 latitude: response.location?.latitude,
+                longitude: response.location?.longitude,
             },
         }
         res.send(geolocation)
