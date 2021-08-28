@@ -8,6 +8,8 @@ import geolocationRoute from './routes/geolocation'
 const app = express()
 const PORT = process.env.PORT || '8080'
 
+app.set('trust proxy', true)
+
 app.use(helmet())
 app.use(errorMiddleware)
 
