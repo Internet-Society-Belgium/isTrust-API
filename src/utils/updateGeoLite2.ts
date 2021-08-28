@@ -18,6 +18,8 @@ export default async () => {
         if (now < outdated) return dbPath
     }
 
+    console.log(`update db`)
+
     await update()
 
     return dbPath
