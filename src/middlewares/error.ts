@@ -1,11 +1,13 @@
-import { Request, Response } from 'express'
+import { NextFunction, Request, Response } from 'express'
 
 import HttpException from '../types/error'
 
 function errorMiddleware(
     error: HttpException,
     request: Request,
-    response: Response
+    response: Response,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    next: NextFunction
 ): void {
     const status = error.status || 500
     const message = error.message || 'Something went wrong'
