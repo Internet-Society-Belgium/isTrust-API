@@ -11,14 +11,11 @@ function errorMiddleware(
 ): void {
     const status = error.status || 500
     const message = error.message || 'Something went wrong'
-    response.status(status)
-    if (process.env.NODE_ENV !== 'production') {
-        response.send({
-            status,
-            message,
-        })
+
+    if (process.env.NODE_ENV === 'development') {
+        response.status(status).send(message)
     } else {
-        response.send({ status })
+        response.sendStatus(status)
     }
 }
 
