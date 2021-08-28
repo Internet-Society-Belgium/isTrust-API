@@ -9,16 +9,11 @@ const dbPath = path.resolve(filesPath, 'GeoLite2-Country.mmdb')
 
 export default async () => {
     if (fs.existsSync(dbPath)) {
-        const { ctime: lastUpdate } = fs.statSync(dbPath)
-
-        console.log(lastUpdate)
+        const { mtime: lastUpdate } = fs.statSync(dbPath)
 
         const now = new Date()
         const outdated = new Date()
-        outdated.setDate(lastUpdate.getDate() + 25)
-
-        console.log(now)
-        console.log(outdated)
+        outdated.setDate(lastUpdate.getDate() + 29)
 
         if (now < outdated) return dbPath
     }
