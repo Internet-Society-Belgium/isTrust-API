@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import maxmind, { CountryResponse } from 'maxmind'
+import maxmind, { CityResponse } from 'maxmind'
 
 import { Geolocation } from '../types/geolocation'
 
@@ -12,18 +12,25 @@ export default router.get('/', async (req, res) => {
 
     const dbPath = await updateGeoLite2()
 
-    const lookup = await maxmind.open<CountryResponse>(dbPath)
+    const lookup = await maxmind.open<CityResponse>(dbPath)
     try {
         const response = lookup.get(req.ip)
-        if (!response?.country) return res.status(404)
+        if (!response) return res.sendStatus(404)
+
+        const isoCode = response.country?.iso_code
+        if (!isoCode) return res.sendStatus(404)
 
         const geolocation: Geolocation = {
             country: {
-                isoCode: response.country.iso_code,
+                isoCode,
+            },
+            location: {
+                longitude: response.location?.longitude,
+                latitude: response.location?.latitude,
             },
         }
         res.send(geolocation)
     } catch (e) {
-        return res.status(404).send()
+        return res.sendStatus(404)
     }
 })

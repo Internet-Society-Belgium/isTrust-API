@@ -4,8 +4,8 @@ import https from 'https'
 import path from 'path'
 import tar from 'tar'
 
-const filesPath = path.resolve(__dirname, '../bin/GeoLite2-Country')
-const dbPath = path.resolve(filesPath, 'GeoLite2-Country.mmdb')
+const filesPath = path.resolve(__dirname, '../bin/GeoLite2-City')
+const dbPath = path.resolve(filesPath, 'GeoLite2-City.mmdb')
 
 export default async () => {
     if (fs.existsSync(dbPath)) {
@@ -28,11 +28,11 @@ async function update() {
 
     if (!licenseKey) throw new Error('No licence Key')
 
-    const archiveUrl = `https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-Country&license_key=${licenseKey}&suffix=tar.gz`
+    const archiveUrl = `https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-City&license_key=${licenseKey}&suffix=tar.gz`
     const checksumUrl = `${archiveUrl}.sha256`
 
-    const archivePath = path.resolve(filesPath, 'GeoLite2-Country.tar.gz')
-    const checksumPath = path.resolve(filesPath, 'GeoLite2-Country.sha256')
+    const archivePath = path.resolve(filesPath, 'GeoLite2-City.tar.gz')
+    const checksumPath = path.resolve(filesPath, 'GeoLite2-City.sha256')
 
     fs.removeSync(filesPath)
     fs.ensureDirSync(filesPath)
