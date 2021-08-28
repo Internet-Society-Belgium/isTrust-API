@@ -17,17 +17,26 @@
   },
   "scripts": {
     "start": "node .",
-    "build": "tsc",
-    "lint": "eslint ./src --ext .ts"
+    "dev": "node -r dotenv/config .",
+    "build": "node utils/prebuild.js && tsc && node utils/postbuild.js",
+    "lint": "eslint --fix ./src",
+    "format": "prettier -w -u ./src"
   },
   "dependencies": {
     "express": "^4.17.1",
-    "helmet": "^4.6.0"
+    "fs-extra": "^10.0.0",
+    "helmet": "^4.6.0",
+    "maxmind": "^4.3.2",
+    "tar": "^6.1.11"
   },
   "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^2.0.4",
     "@types/express": "^4.17.13",
+    "@types/fs-extra": "^9.0.12",
+    "@types/tar": "^4.0.5",
     "@typescript-eslint/eslint-plugin": "^4.29.3",
     "@typescript-eslint/parser": "^4.29.3",
+    "dotenv": "^10.0.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-node": "^11.1.0",
