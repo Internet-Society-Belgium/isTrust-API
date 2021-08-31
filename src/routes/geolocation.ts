@@ -7,7 +7,7 @@ import updateGeoLite2 from '../utils/updateGeoLite2'
 
 const router = Router()
 
-export default router.get('/', async (req, res) => {
+export default router.get('/', async (req, res, next) => {
     const dbPath = await updateGeoLite2()
 
     const lookup = await maxmind.open<CityResponse>(dbPath)
@@ -29,6 +29,7 @@ export default router.get('/', async (req, res) => {
         }
         res.send(geolocation)
     } catch (e) {
-        return res.sendStatus(404)
+        next(e)
+        return
     }
 })
