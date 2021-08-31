@@ -60,7 +60,10 @@ export default router.get('/', async (req, res, next) => {
             }
 
             const protocol = socket.getProtocol()
-            if (!protocol) return res.sendStatus(500)
+            if (!protocol) {
+                next('no protocol')
+                return
+            }
 
             const validCertificate: ValidCertificate = {
                 valid: true,
