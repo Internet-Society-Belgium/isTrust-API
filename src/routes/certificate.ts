@@ -43,24 +43,6 @@ export default router.get('/', async (req, res, next) => {
                 return
             }
 
-            const cert = socket.getPeerCertificate(false)
-
-            const {
-                O: organisation,
-                C: country,
-                ST: region,
-                L: state,
-            } = cert.subject
-
-            const owner: Owner = {
-                organisation,
-                location: {
-                    state,
-                    region,
-                    country,
-                },
-            }
-
             const protocol = socket.getProtocol()
             if (!protocol) {
                 next('no protocol')
@@ -71,9 +53,29 @@ export default router.get('/', async (req, res, next) => {
                 valid: true,
                 protocol,
             }
-            if (JSON.stringify(owner) !== '{}') {
+
+            const cert = socket.getPeerCertificate(false)
+            const {
+                O: organisation,
+                C: country,
+                ST: region,
+                L: state,
+            } = cert.subject
+
+            if (organisation) {
+                const owner: Owner = {
+                    organisation,
+                }
+                if (country && region && state) {
+                    owner.location = {
+                        state,
+                        region,
+                        country,
+                    }
+                }
                 validCertificate.owner = owner
             }
+
             res.send(validCertificate)
         }
     )
