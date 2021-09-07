@@ -54,9 +54,11 @@ export default router.get('/', async (req, res, next) => {
 
             const owner: Owner = {
                 organisation,
-                country,
-                region,
-                state,
+                location: {
+                    state,
+                    region,
+                    country,
+                },
             }
 
             const protocol = socket.getProtocol()

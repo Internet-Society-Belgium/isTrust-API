@@ -6,9 +6,11 @@ export interface ValidCertificate {
 
 export interface Owner {
     organisation: string
-    state: string
-    region: string
-    country: string
+    location: {
+        state: string
+        region: string
+        country: string
+    }
 }
 
 export interface InvalidCertificate {
