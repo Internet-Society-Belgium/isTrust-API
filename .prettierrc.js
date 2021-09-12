@@ -1,14 +1,14 @@
 module.exports = {
-  trailingComma: 'es5',
-  tabWidth: 4,
-  semi: false,
-  singleQuote: true,
-  importOrder: [
-    '^[^\\.](.*)$',
-    '^[\\.\\/]*\\/types\\/(.*)$',
-    '^[\\.\\/]*\\/middlewares\\/(.*)$',
-    '^[\\.\\/]*\\/routes\\/(.*)$',
-    '^[\\.\\/]',
-  ],
-  importOrderSeparation: true,
+    trailingComma: 'es5',
+    tabWidth: 4,
+    semi: false,
+    singleQuote: true,
+    importOrder: [
+        '^[^\\.](.*)$',
+        '^[\\.\\/]*\\/types\\/(.*)$',
+        '^[\\.\\/]*\\/middlewares\\/(.*)$',
+        '^[\\.\\/]*\\/routes\\/(.*)$',
+        '^[\\.\\/]',
+    ],
+    importOrderSeparation: true,
 }
