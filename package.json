@@ -1,10 +1,10 @@
 {
-    "name": "trest-api",
+    "name": "istrust-api",
     "version": "1.0.0",
-    "description": "trest API",
-    "homepage": "https://github.com/Internet-Society-Belgium/trest-api#readme",
+    "description": "isTrust API",
+    "homepage": "https://github.com/Internet-Society-Belgium/isTrust-API#readme",
     "bugs": {
-        "url": "https://github.com/Internet-Society-Belgium/trest-api/issues"
+        "url": "https://github.com/Internet-Society-Belgium/isTrust-API/issues"
     },
     "author": {
         "name": "Progiciel",
@@ -13,7 +13,7 @@
     "main": "build/index.js",
     "repository": {
         "type": "git",
-        "url": "https://github.com/Internet-Society-Belgium/trest-api.git"
+        "url": "https://github.com/Internet-Society-Belgium/isTrust-API.git"
     },
     "scripts": {
         "prepare": "husky install",
