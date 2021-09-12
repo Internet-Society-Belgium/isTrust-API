@@ -18,9 +18,8 @@
     "scripts": {
         "prepare": "husky install",
         "lint": "eslint --fix",
-        "lint:staged": "lint-staged",
         "format": "prettier -w .",
-        "format:staged": "pretty-quick --staged",
+        "lint_format:staged": "lint-staged",
         "serve": "node .",
         "serve:dev": "node -r dotenv/config .",
         "serve:dev:watch": "nodemon --exec 'npm run build && npm run dev' --ignore build/",
