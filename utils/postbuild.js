@@ -12,6 +12,7 @@ buildPackage.scripts = {
     start: 'node .',
 }
 delete buildPackage.devDependencies
+delete buildPackage.config
 
 fs.writeFileSync(
     path.resolve(buildPath, 'package.json'),
