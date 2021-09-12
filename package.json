@@ -24,7 +24,7 @@
         "serve": "node .",
         "serve:dev": "node -r dotenv/config .",
         "serve:dev:watch": "nodemon --exec 'npm run build && npm run dev' --ignore build/",
-        "build": "node utils/prebuild.js && tsc && node utils/postbuild.js",
+        "build": "npm i && node utils/prebuild.js && tsc && node utils/postbuild.js",
         "pack": "node utils/pack.js",
         "commit": "cz",
         "release:patch": "dotenv release-it patch",
