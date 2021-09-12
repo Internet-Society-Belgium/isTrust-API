@@ -2,9 +2,9 @@
     "name": "trest-api",
     "version": "0.1.0",
     "description": "trest API",
-    "homepage": "https://github.com/Progitiel/trest-api#readme",
+    "homepage": "https://github.com/Internet-Society-Belgium/trest-api#readme",
     "bugs": {
-        "url": "https://github.com/Progitiel/trest-api/issues"
+        "url": "https://github.com/Internet-Society-Belgium/trest-api/issues"
     },
     "author": {
         "name": "Progiciel",
@@ -13,7 +13,7 @@
     "main": "build/index.js",
     "repository": {
         "type": "git",
-        "url": "https://github.com/Progitiel/trest-api.git"
+        "url": "https://github.com/Internet-Society-Belgium/trest-api.git"
     },
     "scripts": {
         "prepare": "husky install",
