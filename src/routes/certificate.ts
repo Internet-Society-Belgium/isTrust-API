@@ -14,7 +14,13 @@ export default router.get('/', async (req, res, next) => {
     const url = req.query.url as string
     if (!url) return res.sendStatus(400)
 
-    const { host } = new URL(url)
+    let host: string
+
+    try {
+        host = new URL(url).host
+    } catch (e) {
+        return res.sendStatus(400)
+    }
 
     const request = https.request(
         {
