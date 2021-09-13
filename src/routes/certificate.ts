@@ -29,7 +29,8 @@ export default router.get('/', async (req, res, next) => {
             agent: new https.Agent({
                 maxCachedSessions: 0,
             }),
-            method: 'HEAD',
+            method: 'GET',
+            headers: { 'User-Agent': 'Mozilla/5.0', Accept: '' },
             rejectUnauthorized: false,
         },
         (response) => {
