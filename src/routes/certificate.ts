@@ -32,6 +32,7 @@ export default router.get('/', async (req, res, next) => {
             method: 'GET',
             headers: { 'User-Agent': 'Mozilla/5.0', Accept: '' },
             rejectUnauthorized: false,
+            timeout: 3000,
         },
         (response) => {
             const socket = response.socket as tls.TLSSocket
