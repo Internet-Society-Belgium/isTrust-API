@@ -1,3 +1,10 @@
+### [2.0.3](https://github.com/Internet-Society-Belgium/isTrust-API/compare/2.0.2...2.0.3) (2021-09-15)
+
+
+### 🐛 Bug Fixes
+
+* **certificate:** timeout ([da2b190](https://github.com/Internet-Society-Belgium/isTrust-API/commit/da2b190007ee7dc4794711a3011c2b7a99a5b467))
+
 ### [2.0.2](https://github.com/Internet-Society-Belgium/isTrust-API/compare/2.0.1...2.0.2) (2021-09-13)
 
 
