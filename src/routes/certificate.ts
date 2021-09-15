@@ -7,6 +7,7 @@ import {
     Owner,
     ValidCertificate,
 } from '../types/certificate'
+import HttpException from '../types/error'
 
 const router = Router()
 
@@ -87,6 +88,10 @@ export default router.get('/', async (req, res, next) => {
             res.send(validCertificate)
         }
     )
+    request.on('timeout', () => {
+        next(new HttpException(504, 'Timeout'))
+        return
+    })
     request.on('error', (e) => {
         next(e)
         return
