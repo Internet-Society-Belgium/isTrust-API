@@ -26,7 +26,10 @@
         "build": "npm i && node utils/prebuild.js && tsc && node utils/postbuild.js",
         "pack": "node utils/pack.js",
         "commit": "cz",
-        "release": "dotenv release-it"
+        "release": "dotenv release-it",
+        "release:patch": "dotenv release-it patch",
+        "release:minor": "dotenv release-it minor",
+        "release:major": "dotenv release-it major"
     },
     "dependencies": {
         "express": "^4.17.1",
