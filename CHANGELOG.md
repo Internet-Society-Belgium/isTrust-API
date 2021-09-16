@@ -1,3 +1,10 @@
+### [2.1.1](https://github.com/Internet-Society-Belgium/isTrust-API/compare/2.1.0...2.1.1) (2021-09-16)
+
+
+### 🐛 Bug Fixes
+
+* **error:** don't log error ([d8f8273](https://github.com/Internet-Society-Belgium/isTrust-API/commit/d8f82733460a1726025ae39a4cea423d3206d85c))
+
 ## [2.1.0](https://github.com/Internet-Society-Belgium/isTrust-API/compare/2.0.4...2.1.0) (2021-09-16)
 
 
