@@ -1,3 +1,10 @@
+## [2.1.0](https://github.com/Internet-Society-Belgium/isTrust-API/compare/2.0.4...2.1.0) (2021-09-16)
+
+
+### ✨ Features
+
+* **certificate:** gET -> HEAD ([5e16042](https://github.com/Internet-Society-Belgium/isTrust-API/commit/5e1604218b06840634417698872a3850cefc9c8b))
+
 ### [2.0.4](https://github.com/Internet-Society-Belgium/isTrust-API/compare/2.0.3...2.0.4) (2021-09-15)
 
 
