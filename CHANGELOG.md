@@ -1,3 +1,14 @@
+## [3.0.0](https://github.com/Internet-Society-Belgium/isTrust-API/compare/2.1.2...3.0.0) (2021-09-21)
+
+
+### ⚠ BREAKING CHANGES
+
+* **geolocation:** delete /geolocation route
+
+### ✨ Features
+
+* **geolocation:** remove ([70496f1](https://github.com/Internet-Society-Belgium/isTrust-API/commit/70496f1848f61b194bb166bacbd7d883c6bfe203))
+
 ### [2.1.2](https://github.com/Internet-Society-Belgium/isTrust-API/compare/2.1.1...2.1.2) (2021-09-16)
 
 ### [2.1.1](https://github.com/Internet-Society-Belgium/isTrust-API/compare/2.1.0...2.1.1) (2021-09-16)
