@@ -10,12 +10,16 @@ provider:
     lambdaHashingVersion: '20201221'
 
 functions:
-    api:
-        handler: src/index.handler
+    hello:
+        handler: hello.handler
         events:
-            - httpApi: '*'
+            - httpApi:
+                  path: /
+                  method: get
         timeout: 5
 
+package:
+    artifact: 'pack/isTrust-API.zip'
+
 plugins:
-    - serverless-plugin-typescript
-    - serverless-offline
+  - serverless-offline

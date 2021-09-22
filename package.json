@@ -10,7 +10,6 @@
         "name": "Progiciel",
         "url": "https://progiciel.be/"
     },
-    "main": "build/index.js",
     "repository": {
         "type": "git",
         "url": "https://github.com/Internet-Society-Belgium/isTrust-API.git"
@@ -20,38 +19,36 @@
         "lint": "eslint --fix",
         "format": "prettier -w .",
         "lint_format:staged": "lint-staged",
-        "dev": "serverless offline",
-        "deploy": "serverless deploy --verbose",
+        "dev": "serverless offline --httpPort 4000 ",
         "commit": "cz",
-        "release": "dotenv release-it",
-        "release:patch": "dotenv release-it patch",
-        "release:minor": "dotenv release-it minor",
-        "release:major": "dotenv release-it major"
-    },
-    "dependencies": {
-        "express": "^4.17.1",
-        "helmet": "^4.6.0",
-        "serverless-http": "^2.7.0"
+        "build": "node utils/prebuild.js && tsc && node utils/postbuild.js",
+        "pack": "node utils/pack.js",
+        "deploy": "npm run build && npm run pack && serverless deploy --verbose",
+        "release": "dotenv -e .env.development release-it",
+        "release:patch": "dotenv -e .env.development release-it patch",
+        "release:minor": "dotenv -e .env.development release-it minor",
+        "release:major": "dotenv -e .env.development release-it major"
     },
     "devDependencies": {
         "@release-it/conventional-changelog": "^3.3.0",
         "@trivago/prettier-plugin-sort-imports": "^2.0.4",
-        "@types/express": "^4.17.13",
+        "@types/aws-lambda": "^8.10.83",
         "@typescript-eslint/eslint-plugin": "^4.31.2",
         "@typescript-eslint/parser": "^4.31.2",
+        "archiver": "^5.3.0",
         "commitizen": "^4.2.4",
         "cz-conventional-changelog": "^3.3.0",
         "dotenv-cli": "^4.0.0",
         "eslint": "^7.32.0",
         "eslint-config-prettier": "^8.3.0",
         "eslint-plugin-node": "^11.1.0",
+        "fs-extra": "^10.0.0",
         "husky": "^7.0.2",
         "lint-staged": "^11.1.2",
         "prettier": "^2.4.1",
         "release-it": "^14.11.6",
         "serverless": "^2.59.0",
         "serverless-offline": "^8.2.0",
-        "serverless-plugin-typescript": "^2.0.0",
         "typescript": "^4.4.3"
     },
     "config": {
