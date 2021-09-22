@@ -23,3 +23,9 @@ package:
 
 plugins:
     - serverless-offline
+    - serverless-prune-plugin
+
+custom:
+    prune:
+        automatic: true
+        number: 3
