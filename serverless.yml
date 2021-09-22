@@ -10,16 +10,16 @@ provider:
     lambdaHashingVersion: '20201221'
 
 functions:
-    hello:
-        handler: hello.handler
+    certificate:
+        handler: functions/certificate.handler
         events:
             - httpApi:
-                  path: /
+                  path: /certificate
                   method: get
         timeout: 5
 
 package:
-    artifact: 'pack/isTrust-API.zip'
+    artifact: 'pack/isTrust-API_v*.zip'
 
 plugins:
-  - serverless-offline
+    - serverless-offline
