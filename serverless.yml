@@ -11,6 +11,7 @@ provider:
 
 functions:
     certificate:
+        memorySize: 128
         handler: functions/certificate.handler
         events:
             - httpApi:
