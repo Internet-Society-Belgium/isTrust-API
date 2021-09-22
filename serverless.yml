@@ -19,7 +19,7 @@ functions:
         timeout: 5
 
 package:
-    artifact: 'pack/isTrust-API_v*.zip'
+    artifact: 'pack/isTrust-API.zip'
 
 plugins:
     - serverless-offline
