@@ -20,11 +20,8 @@
         "lint": "eslint --fix",
         "format": "prettier -w .",
         "lint_format:staged": "lint-staged",
-        "serve": "node .",
-        "serve:dev": "dotenv node .",
-        "serve:dev:watch": "nodemon --exec 'npm run build && npm run serve:dev' --watch src",
-        "build": "npm i && node utils/prebuild.js && tsc && node utils/postbuild.js",
-        "pack": "node utils/pack.js",
+        "dev": "serverless offline",
+        "deploy": "serverless deploy --verbose",
         "commit": "cz",
         "release": "dotenv release-it",
         "release:patch": "dotenv release-it patch",
@@ -33,20 +30,15 @@
     },
     "dependencies": {
         "express": "^4.17.1",
-        "fs-extra": "^10.0.0",
         "helmet": "^4.6.0",
-        "maxmind": "^4.3.2",
-        "tar": "^6.1.11"
+        "serverless-http": "^2.7.0"
     },
     "devDependencies": {
         "@release-it/conventional-changelog": "^3.3.0",
         "@trivago/prettier-plugin-sort-imports": "^2.0.4",
         "@types/express": "^4.17.13",
-        "@types/fs-extra": "^9.0.13",
-        "@types/tar": "^4.0.5",
         "@typescript-eslint/eslint-plugin": "^4.31.2",
         "@typescript-eslint/parser": "^4.31.2",
-        "archiver": "^5.3.0",
         "commitizen": "^4.2.4",
         "cz-conventional-changelog": "^3.3.0",
         "dotenv-cli": "^4.0.0",
@@ -55,9 +47,11 @@
         "eslint-plugin-node": "^11.1.0",
         "husky": "^7.0.2",
         "lint-staged": "^11.1.2",
-        "nodemon": "^2.0.12",
         "prettier": "^2.4.1",
         "release-it": "^14.11.6",
+        "serverless": "^2.59.0",
+        "serverless-offline": "^8.2.0",
+        "serverless-plugin-typescript": "^2.0.0",
         "typescript": "^4.4.3"
     },
     "config": {

@@ -1,18 +1,13 @@
 import express from 'express'
 import helmet from 'helmet'
+import serverless from 'serverless-http'
 
-import errorMiddleware from './middlewares/error'
-
-import certificateRoute from './routes/certificate'
+import helloRoute from './routes/hello'
 
 const app = express()
-const PORT = process.env.PORT || '8080'
-
-app.set('trust proxy', true)
 
 app.use(helmet())
-app.use(errorMiddleware)
 
-app.use('/certificate', certificateRoute)
+app.use('/hello', helloRoute)
 
-app.listen(PORT, () => console.log(`App listening on port ${PORT}!`))
+module.exports.handler = serverless(app)

@@ -1,0 +1,21 @@
+frameworkVersion: '2'
+
+service: isTrust
+
+provider:
+    name: aws
+    runtime: nodejs12.x
+    stage: production
+    region: eu-west-3
+    lambdaHashingVersion: '20201221'
+
+functions:
+    api:
+        handler: src/index.handler
+        events:
+            - httpApi: '*'
+        timeout: 5
+
+plugins:
+    - serverless-plugin-typescript
+    - serverless-offline
