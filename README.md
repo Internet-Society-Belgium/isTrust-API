@@ -13,6 +13,14 @@
 
 <div align="center">
     <a
+        href="https://github.com/Internet-Society-Belgium/isTrust-API/blob/main/CONTRIBUTING.md"
+    >
+        :writing_hand: CONTRIBUTING.md
+    </a>
+</div>
+
+<div align="center">
+    <a
         href="https://github.com/Internet-Society-Belgium/isTrust-API/blob/main/CREDITS.md"
     >
         :family: CREDITS.md
