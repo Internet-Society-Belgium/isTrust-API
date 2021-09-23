@@ -73,6 +73,4 @@ This license is governed by the Laws of Belgium. Disputes shall be settled by Br
 
 [helmet](https://helmetjs.github.io/) => MIT licence => thanks Copyright (c) 2012-2021 Evan Hahn, Adam Baldwin
 
-[maxmind](https://github.com/runk/node-maxmind) => MIT licence => thanks Copyright (c) 2020 Dmitry Shirokov
-
 [tar](https://github.com/npm/node-tar) => ISC license => thanks Copyright (c) Isaac Z. Schlueter and Contributors
