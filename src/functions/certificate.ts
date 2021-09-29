@@ -43,9 +43,7 @@ function httpsRequest(
             {
                 host,
                 port: 443,
-                agent: new https.Agent({
-                    maxCachedSessions: 0,
-                }),
+                agent: false,
                 method: 'HEAD',
                 headers: { 'User-Agent': 'Mozilla/5.0', Accept: '' },
                 rejectUnauthorized: false,
