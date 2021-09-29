@@ -7,10 +7,7 @@ const buildPath = path.resolve('build')
 var buildPackage = {
     ...defaultPackage,
 }
-buildPackage.main = 'index.js'
-buildPackage.scripts = {
-    start: 'node .',
-}
+delete buildPackage.scripts
 delete buildPackage.devDependencies
 delete buildPackage.config
 

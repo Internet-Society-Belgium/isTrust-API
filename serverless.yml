@@ -1,0 +1,32 @@
+frameworkVersion: '2'
+
+service: isTrust
+
+provider:
+    name: aws
+    runtime: nodejs12.x
+    stage: production
+    region: eu-west-3
+    lambdaHashingVersion: '20201221'
+
+functions:
+    certificate:
+        memorySize: 128
+        handler: functions/certificate.handler
+        events:
+            - httpApi:
+                  path: /certificate
+                  method: get
+        timeout: 5
+
+package:
+    artifact: 'pack/isTrust-API.zip'
+
+plugins:
+    - serverless-offline
+    - serverless-prune-plugin
+
+custom:
+    prune:
+        automatic: true
+        number: 3
