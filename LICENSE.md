@@ -64,13 +64,3 @@ Choice of Law
 This license is governed by the Laws of Belgium. Disputes shall be settled by Brussels City Court.
 
 [Source](https://opensource.org/licenses/QPL-1.0)
-
-# LICENSES FOR INCORPORATED CODEBASES
-
-[express](https://github.com/expressjs/express) => MIT => thanks Copyright (c) 2009-2014 TJ Holowaychuk <tj@vision-media.ca>, Copyright (c) 2013-2014 Roman Shtylman <shtylman+expressjs@gmail.com>, Copyright (c) 2014-2015 Douglas Christopher Wilson <doug@somethingdoug.com>
-
-[fs-extra](https://github.com/jprichardson/node-fs-extra) => MIT => thanks Copyright (c) 2011-2017 JP Richardson
-
-[helmet](https://helmetjs.github.io/) => MIT licence => thanks Copyright (c) 2012-2021 Evan Hahn, Adam Baldwin
-
-[tar](https://github.com/npm/node-tar) => ISC license => thanks Copyright (c) Isaac Z. Schlueter and Contributors
