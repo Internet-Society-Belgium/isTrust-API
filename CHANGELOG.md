@@ -1,3 +1,11 @@
+## [3.2.0](https://github.com/Internet-Society-Belgium/isTrust-API/compare/3.1.0...3.2.0) (2021-10-14)
+
+
+### ✨ Features
+
+* **certificate:** timeout 2500ms ([9f521e0](https://github.com/Internet-Society-Belgium/isTrust-API/commit/9f521e070db7086a95944e75a15eab159cecb107))
+* new agent per request ([5ab3072](https://github.com/Internet-Society-Belgium/isTrust-API/commit/5ab3072f71994a9eacb1027c8cce02466b03c71a))
+
 ## [3.1.0](https://github.com/Internet-Society-Belgium/isTrust-API/compare/3.0.0...3.1.0) (2021-09-29)
 
 
