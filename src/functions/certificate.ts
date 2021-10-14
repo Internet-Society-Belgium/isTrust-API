@@ -47,7 +47,7 @@ function httpsRequest(
                 method: 'HEAD',
                 headers: { 'User-Agent': 'Mozilla/5.0', Accept: '' },
                 rejectUnauthorized: false,
-                timeout: 4000,
+                timeout: 2500,
             },
             (response) => {
                 const socket = response.socket as tls.TLSSocket
