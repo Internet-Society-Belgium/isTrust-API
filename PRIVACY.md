@@ -20,6 +20,6 @@ A first way to consult domain information is to use the RDAP propocol; isTrust g
 
 The collection and processing of your data by the latter will be done under their sole responsibility (as separate data controllers). We invite you to read the privacy notices and other documents published on their websites for that purpose.
 
-2. SECURITY. To check and collect of information on HTTPS certificates, any browser extension cannot access certificates’ data itself for security and technical reasons, that’s why the browser extension calls a second service of isTrust-API to get data that will be displayed in the “Security” section. No personal data is stored, including your IP address.
+2. SECURITY. To check and collect of information on HTTPS certificates, any browser extension cannot access certificates’ data itself for security and technical reasons, that’s why the browser extension calls a second service of isTrust-API to get data that will be displayed in the "Communication" section. No personal data is stored, including your IP address.
 
 If you have any question about the processing of your personal data (including about your rights to access and to rectification on the data, and your other rights) feel free to contact DPO@isoc.be. Alternatively you can always contact the Belgian Data Protection Authority (https://www.dataprotectionauthority.be/citizen).
