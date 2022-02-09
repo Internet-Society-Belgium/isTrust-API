@@ -11,31 +11,35 @@ import {
 export const handler = async (
     event: APIGatewayProxyEvent
 ): Promise<APIGatewayProxyResult> => {
+    const param_url = event.queryStringParameters?.url
+    if (!param_url) return sendStatus(400)
+
+    let host: string
+
     try {
-        const url = event.queryStringParameters?.url
-        if (!url) return sendStatus(400)
-
-        let host: string
-
-        try {
-            host = new URL(url).host
-        } catch (e) {
-            return sendStatus(400)
+        const url = new URL(param_url)
+        if (url.protocol !== 'https:') {
+            const invalidCertificate: InvalidCertificate = {
+                valid: false,
+                error: 'Wrong protocol',
+            }
+            return send(invalidCertificate)
         }
-
-        try {
-            const certificate = await httpsRequest(host)
-            return send(certificate)
-        } catch (e) {
-            const status = e as number
-            return sendStatus(status || 500)
-        }
+        host = url.host
     } catch (e) {
-        return sendStatus(500)
+        return sendStatus(400)
+    }
+
+    try {
+        const certificate = await getCertificate(host)
+        return send(certificate)
+    } catch (e) {
+        const status = e as number
+        return sendStatus(status || 500)
     }
 }
 
-function httpsRequest(
+function getCertificate(
     host: string
 ): Promise<InvalidCertificate | ValidCertificate> {
     return new Promise(function (resolve, reject) {
@@ -59,7 +63,7 @@ function httpsRequest(
 
                     const invalidCertificate: InvalidCertificate = {
                         valid: false,
-                        error: authorizationError.toString(),
+                        error: `${authorizationError.toString()}`,
                     }
 
                     return resolve(invalidCertificate)
@@ -101,8 +105,13 @@ function httpsRequest(
         request.on('timeout', () => {
             return reject(504)
         })
-        request.on('error', () => {
-            return reject(500)
+        request.on('error', (err: Error & { code?: number }) => {
+            const invalidCertificate: InvalidCertificate = {
+                valid: false,
+                error: `${err?.code || 'Secure Connection Failed'}`,
+            }
+
+            return resolve(invalidCertificate)
         })
         request.end()
     })
