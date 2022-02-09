@@ -16,18 +16,18 @@
     },
     "scripts": {
         "prepare": "husky install",
-        "lint": "eslint --fix",
+        "lint": "eslint src --fix",
         "format": "prettier -w .",
         "lint_format:staged": "lint-staged",
         "commit": "cz",
         "build": "node utils/prebuild.js && tsc && node utils/postbuild.js",
         "pack": "node utils/pack.js",
         "dev": "nodemon --exec \"npm run build && npm run pack && serverless offline --httpPort 4000\" --config nodemon.json",
-        "deploy": "npm run build && npm run pack && serverless deploy --verbose",
         "release": "dotenv -e .env.development release-it",
         "release:patch": "dotenv -e .env.development release-it patch",
         "release:minor": "dotenv -e .env.development release-it minor",
-        "release:major": "dotenv -e .env.development release-it major"
+        "release:major": "dotenv -e .env.development release-it major",
+        "deploy": "npm run build && npm run pack && serverless deploy --verbose"
     },
     "devDependencies": {
         "@release-it/conventional-changelog": "^3.3.0",
