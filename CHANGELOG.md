@@ -1,3 +1,10 @@
+### [3.2.1](https://github.com/Internet-Society-Belgium/isTrust-API/compare/3.2.0...3.2.1) (2022-02-09)
+
+
+### 🐛 Bug Fixes
+
+* https ([6d40d34](https://github.com/Internet-Society-Belgium/isTrust-API/commit/6d40d343d7dc0339ef4911312f92ecc1507f87dd)), closes [#24](https://github.com/Internet-Society-Belgium/isTrust-API/issues/24)
+
 ## [3.2.0](https://github.com/Internet-Society-Belgium/isTrust-API/compare/3.1.0...3.2.0) (2021-10-14)
 
 
