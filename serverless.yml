@@ -4,7 +4,7 @@ service: isTrust
 
 provider:
     name: aws
-    runtime: nodejs12.x
+    runtime: nodejs14.x
     stage: production
     region: eu-west-3
     lambdaHashingVersion: '20201221'
