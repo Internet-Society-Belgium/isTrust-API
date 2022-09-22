@@ -1,13 +1,13 @@
-frameworkVersion: '2'
+frameworkVersion: '3'
 
 service: isTrust
 
 provider:
     name: aws
+    deploymentMethod: direct
     runtime: nodejs16.x
     stage: production
     region: eu-west-3
-    lambdaHashingVersion: '20201221'
 
 functions:
     certificate:
@@ -29,4 +29,4 @@ plugins:
 custom:
     prune:
         automatic: true
-        number: 3
+        number: 5
